@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>singleproductpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
+    <style>
+        ul.navbar-nav .nav-item {
+            border: 1px solid #000;
+            border-radius: 20px;
+            margin-right: 20px;
+        }
+
+        ul.navbar-nav .nav-item .nav-link {
+            color: #000000 !important;
+            text-transform: uppercase;
+            font-size: 1rem;
+            padding: 0px 20px;
+        }
+
+        .my_country{
+            padding: 0px 20px;
+            background-color: transparent;
+            border: 2px solid;
+            border-radius: 20px;
+            margin-right: 20px;
+            height: 45px;
+        }
+        .cart_data{
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid;
+            border-radius: 20px;
+            margin-right: 20px;
+        }
+        
+        .thumbnail {
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+
+        .fullimage {
+            max-width: 100%;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+
+        .soldbtn {
+            border-radius: 20px;
+        }
+
+        .clients-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bg-purple {
+            background-color: purple;
+            height: 100%;
+        }
+
+        .clients-slider {
+            display: flex;
+            width: max-content;
+            animation: slide 20s linear infinite;
+        }
+
+        .clients-slider h3 {
+            flex-shrink: 0;
+            padding: 0 40px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pause animation on hover */
+        .clients-slider:hover {
+            animation-play-state: paused;
+        }
+
+        .linklist {
+            list-style: none;
+        }
+
+        .bg-purpleshade {
+            background-color: #c4baff;
+        }
+
+        p.figmas {
+            height: 90px;
+            background-color: yellow;
+            border-radius: 40px 40px 0px 0px;
+            text-transform: uppercase;
+        }
+
+        h3.head3 {
+            text-transform: uppercase;
+        }
+
+        .footerlink {
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .linkswrap {
+            justify-content: space-around;
+        }
+        #navbar {
+            background-color: #ffc700;
+        }
+        .sizewrap {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .sizewrap input {
+            height: 30px;
+            width: 30px;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section id="navbar3">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <div class="d-flex justify-content-start"></div>
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <ul class="navbar-nav me-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0)">About</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex align-items-center">
+                                <input class="form-control me-2" type="text" placeholder="Search">
+                                <button class="btn btn-outline-dark" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 flex-center">
+                    <div class="d-flex justify-content-center">
+                        <a class="navbar-brand text-dark" href="index.html"><strong>THE FIGMA STORE</strong></a>
+                    </div>
+                </div>
+                <div class="col-md-4 flex-end">
+                    <div class="d-flex justify-content-end">
+                        <select name="country" id="country" class="my_country">
+                            <option value="United States">United States</option>
+                            <option value="India">India</option>
+                            <option value="Italy">Italy</option>
+                        </select>
+                        <div class="cart-wrapper">
+                            <p class="cart_data">
+                                Cart <span id="cart_value">0</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            </div>
+        </nav>
+    </section>
+    <section id="singleproduct">
+        <div class="container  py-5">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="assets/images/accessoriescategory.png" onclick="changethumb(this)" alt="" id="thumb1" class="thumbnail">
+                                    <img src="assets/images/girlfashion3.png" onclick="changethumb(this)" alt="" id="thumb2" class="thumbnail">
+                                    <img src="assets/images/mancategory.png" onclick="changethumb(this)" alt="" id="thumb3" class="thumbnail">
+                                    <img src="assets/images/girlfashion1.jpg" onclick="changethumb(this)" alt="" id="thumb4" class="thumbnail">
+                                </div>
+                                <div class="col-md-10">
+                                    <img src="assets/images/girlfashion1.jpg" alt="" id="fullimg" class="fullimage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="btn btn-success">LAYERS</p>
+                            <h1>Design in bloom tee</h1>
+                            <div class="sizewrap">
+                                <input type="radio" name="size" value="s" class="size">S
+                                <input type="radio" name="size" value="m" class="size">M
+                                <input type="radio" name="size" value="l" class="size">L
+                                <input type="radio" name="size" value="xl" class="size">XL
+                            </div>
+                            <div class="qtywrap">
+                                <button class="btn btn-outline-dark rounded" id="sub" onclick="sub()">-</button>
+                                <input type="number" min="0" name="qty" id="qty">
+                                <button class="btn btn-outline-dark rounded" id="add" onclick="add()">+</button>
+                            </div>
+                            <div class="soldout">
+                                <button class="btn btn-dark w-100 mt-2 soldbtn" disabled>Sold Out</button>
+                            </div>
+                            <div class="details mt-2">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper egestas purus
+                                    et volutpat. Sed tincidunt sapien vel justo posuere, id ultrices velit congue. Proin
+                                    lobortis massa vitae dolor tincidunt tempus. Donec vel porttitor ex. Sed ut risus
+                                    dui. Quisque scelerisque porta nulla sit amet consequat. Suspendisse interdum felis
+                                    quis mauris dignissim tincidunt.</p>
+                                <p>Integer urna elit, consequat vel porttitor eget,
+                                    fringilla vitae nibh. Nullam tempus ex id eleifend condimentum. Quisque efficitur
+                                    vel magna quis laoreet. Ut consequat ultricies urna at aliquam. Nam ultricies mi
+                                    quis lorem pretium, at interdum erat posuere.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="bg-purpleshade pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+
+
+                        <div class="col-md-3 mx-auto">
+                            <p class="figmas "><strong> The Figma Store</strong></p>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3 class="head3">Object <br>That Inspire.</h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="linklist">
+                                        <li>Privacy Policy</li>
+                                        <li>Terms Of Sale</li>
+                                        <li>Contact Us</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="linkswrap d-flex">
+                                        <a href="#" class="footerlink">Figma</a>
+                                        <a href="#" class="footerlink">Twitter</a>
+                                        <a href="#" class="footerlink">Instagram</a>
+                                        <a href="#" class="footerlink">Youtube</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="">
+                
+                    <div class="clients-container pt-5">
+                        <div class="clients-slider">
+                            <h3>FIGMA'S</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>MARVELOUSLY</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>CONSIDERED</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>COLLECTION</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>OF</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>OBJECTS</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>FOR</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>OUR</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>TIME</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>ON</h3>
+                            <!-- Duplicate items -->
+                            <h3>FIGMA'S</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>MARVELOUSLY</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>CONSIDERED</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>COLLECTION</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>OF</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>OBJECTS</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>FOR</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>OUR</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>TIME</h3>
+                            <h3><img src="assets/images/first.png" alt=""></h3>
+                            <h3>ON</h3>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </footer>
+    <script>
+        function changethumb(element){
+           document.getElementById('fullimg').src = element.src;
+        }
+    </script>
+</body>
+
+</html>

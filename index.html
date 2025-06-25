@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fronted_test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="javascript" href="assets/js/script.js">
+    <style>
+        #navbar {
+            background-color: #ffc700;
+        }
+
+        ul.navbar-nav .nav-item {
+            border: 1px solid #000;
+            border-radius: 20px;
+            margin-right: 20px;
+        }
+
+        ul.navbar-nav .nav-item .nav-link {
+            color: #000000 !important;
+            text-transform: uppercase;
+            font-size: 1rem;
+            padding: 0px 20px;
+        }
+
+        .my_country {
+            padding: 0px 20px;
+            background-color: transparent;
+            border: 2px solid;
+            border-radius: 20px;
+            margin-right: 20px;
+            height: 45px;
+        }
+
+        .cart_data {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid;
+            border-radius: 20px;
+            margin-right: 20px;
+        }
+
+        #slider {
+            background-color: #ffc700;
+        }
+
+        #figmalouder {
+            background-color: #000000;
+        }
+
+        .card1 {
+            background-color: #d2d2d2;
+        }
+
+        .figmacard {
+            border-radius: 45px;
+        }
+
+        img.figma {
+            height: 400px;
+
+        }
+
+        .card-body.rounded {
+            padding: 0;
+        }
+
+        .row3 {
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+
+        }
+
+        /*New*/
+        .drag-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .drag-slider-track {
+            display: flex;
+            gap: 10px;
+            /* Adjust spacing between images */
+            cursor: grab;
+            user-select: none;
+            touch-action: pan-y;
+            will-change: transform;
+        }
+
+        .drag-slider-track img {
+            width: 200px;
+            /* Adjust based on your needs */
+            height: auto;
+            flex-shrink: 0;
+            pointer-events: none;
+            /* Prevents image dragging issues */
+        }
+
+        .drag-slider-track.grabbing {
+            cursor: grabbing;
+        }
+
+
+        /*Marquee*/
+        .clients-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .clients-slider {
+            display: flex;
+            width: max-content;
+            animation: slide 20s linear infinite;
+        }
+
+        .clients-slider h3 {
+            flex-shrink: 0;
+            padding: 0 40px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pause animation on hover */
+        .clients-slider:hover {
+            animation-play-state: paused;
+        }
+
+        .firstimg {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #000000;
+
+        }
+
+        .small-text {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #000000;
+            font-size: 0.75rem;
+        }
+
+        .customfoooter {
+            padding-top: 150px;
+        }
+
+        .card-content {
+            margin-top: 90px;
+            padding-left: 90px;
+        }
+
+        .linklist {
+            list-style: none;
+        }
+
+        p.figmas {
+            height: 80px;
+            background-color: green;
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h3.head3 {
+            text-transform: uppercase;
+        }
+
+        .footerlink {
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .linkswrap {
+            justify-content: space-around;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="navbar">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <div class="d-flex justify-content-start"></div>
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <ul class="navbar-nav me-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0)">About</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex align-items-center">
+                                <input class="form-control me-2" type="text" placeholder="Search">
+                                <button class="btn btn-outline-dark" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 flex-center">
+                    <div class="d-flex justify-content-center">
+                        <a class="navbar-brand text-dark" href="index.html"><strong>THE FIGMA STORE</strong></a>
+                    </div>
+                </div>
+                <div class="col-md-4 flex-end">
+                    <div class="d-flex justify-content-end">
+                        <select name="country" id="country" class="my_country">
+                            <option value="United States">United States</option>
+                            <option value="India">India</option>
+                            <option value="Italy">Italy</option>
+                        </select>
+                        <div class="cart-wrapper">
+                            <p class="cart_data">
+                                Cart <span id="cart_value">0</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+           
+        </nav>
+    </section>
+    <section id="slider" class="py-5">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="drag-slider">
+                        <div class="drag-slider-track" id="sliderTrack">
+                            <img src="/assets/images/sliderimag1.png">
+                            <img src="/assets/images/sliderimag2.png">
+                            <img src="/assets/images/sliderimage3.png">
+                            <img src="/assets/images/sliderimage4.png">
+                            <!-- First Duplicate items -->
+                            <img src="/assets/images/sliderimag1.png">
+                            <img src="/assets/images/sliderimag2.png">
+                            <img src="/assets/images/sliderimage3.png">
+                            <img src="/assets/images/sliderimage4.png">
+                            <!-- Second Duplicate items (non-draggable beyond this) -->
+                            <img src="/assets/images/sliderimag1.png">
+                            <img src="/assets/images/sliderimag2.png">
+                            <img src="/assets/images/sliderimage3.png">
+                            <img src="/assets/images/sliderimage4.png">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-md-8 mx-auto">
+                    <p class="h1 text-center">FIGMA'S
+                        <img src="assets/images/first.png" class="heading-icon">
+                        COLLECTION
+                        <img src="assets/images/second.png" class="heading-icon">
+                        OF
+                        <br>
+                        LAYERS
+                        <img src="assets/images/third.png" class="heading-icon">
+                        AND
+                        <img src="assets/images/fourth.png" class="heading-icon">
+                        COMPONENTS
+                        <img src="assets/images/fifth.png" class="heading-icon">
+                        FOR
+                        <br>
+                        YOU
+                        <img src="assets/images/sixth.png" class="heading-icon">
+                        AND
+                        <img src="assets/images/sevanth.png" class="heading-icon">
+                        YOUR
+                        <img src="assets/images/eightth.png" class="heading-icon">
+                        FRIENDS
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="figmalouder" class="py-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card m-4 card1 figmacard">
+                        <div class="card-body rounded">
+                            <div class="row">
+                                <div class="col-md-3 card-content">
+                                    <h2 class="head2 pt-4">FIGMA X WORK
+                                        <br>
+                                        LOUDER
+                                    </h2>
+                                    <p class="para1">
+                                        Meet the limited edition Figma Creator Micro Keyboard
+                                    </p>
+                                    <button class="btn btn-rounded preorder mb-4 btn-dark">PREORDER</button>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="d-flex justify-content-end">
+                                        <img src="assets/images/figma.png" class="figma">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="category" class="py-5">
+        <div class="container">
+            <div class="row3  mt-4 px-50">
+                <div class="col2">
+                    <img src="assets/images/mancategory.png" class="categoryimg"><br>
+                    <div>
+                        <small class="small-text">category</small><br>
+                        <a href="category.html" class="firstimg ">womens</a>
+                    </div>
+                </div>
+                <div class="col2">
+                    <img src="assets/images/accessoriescategory.png" class="categoryimg"><br>
+                    <div>
+                        <small class="small-text">category</small><br>
+                        <a href="category.html" class="firstimg">accessories</a>
+                    </div>
+                </div>
+                <div class="col2">
+                    <img src="assets/images/mancategory.png" class="categoryimg"><br>
+                    <div class="">
+                        <small class="small-text">category</small><br>
+                        <a href="category.html" class="firstimg pb-4">mens</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="customfoooter bg-warning">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+
+
+                        <div class="col-md-3 mx-auto">
+                            <p class="figmas "><strong> The Figma Store</strong></p>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3 class="head3">Object <br>That Inspire.</h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="linklist">
+                                        <li>Privacy Policy</li>
+                                        <li>Terms Of Sale</li>
+                                        <li>Contact Us</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="linkswrap d-flex">
+                                        <a href="#" class="footerlink">Figma</a>
+                                        <a href="#" class="footerlink">Twitter</a>
+                                        <a href="#" class="footerlink">Instagram</a>
+                                        <a href="#" class="footerlink">Youtube</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="">
+
+                <div class="clients-container pt-5">
+                    <div class="clients-slider">
+                        <h3>FIGMA'S</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>MARVELOUSLY</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>CONSIDERED</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>COLLECTION</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>OF</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>OBJECTS</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>FOR</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>OUR</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>TIME</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>ON</h3>
+                        <!-- Duplicate items -->
+                        <h3>FIGMA'S</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>MARVELOUSLY</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>CONSIDERED</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>COLLECTION</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>OF</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>OBJECTS</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>FOR</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>OUR</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>TIME</h3>
+                        <h3><img src="assets/images/first.png" alt=""></h3>
+                        <h3>ON</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const slider = document.querySelector('.drag-slider');
+        const track = document.querySelector('.drag-slider-track');
+        const images = track.querySelectorAll('img');
+
+        let isDragging = false;
+        let startPosition = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let animationID;
+        let trackWidth = 0;
+        let singleLoopWidth = 0;
+
+        window.addEventListener('load', () => {
+            // Total track width
+            trackWidth = track.scrollWidth;
+            // Width of one original set (before duplicates)
+            singleLoopWidth = trackWidth / 3;
+
+            // Start from the middle set to allow smooth looping
+            currentTranslate = -singleLoopWidth;
+            prevTranslate = -singleLoopWidth;
+            track.style.transform = `translateX(${currentTranslate}px)`;
+        });
+
+        slider.addEventListener('mousedown', dragStart);
+        slider.addEventListener('touchstart', dragStart);
+        slider.addEventListener('mouseup', dragEnd);
+        slider.addEventListener('mouseleave', dragEnd);
+        slider.addEventListener('touchend', dragEnd);
+        slider.addEventListener('mousemove', drag);
+        slider.addEventListener('touchmove', drag);
+
+        function dragStart(e) {
+            if (e.type === 'touchstart') {
+                startPosition = e.touches[0].clientX;
+            } else {
+                startPosition = e.clientX;
+                e.preventDefault();
+            }
+            isDragging = true;
+            slider.style.cursor = 'grabbing';
+            animationID = requestAnimationFrame(animation);
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+
+            let currentPosition = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+            const diff = currentPosition - startPosition;
+            currentTranslate = prevTranslate + diff;
+
+            // Infinite loop logic
+            if (currentTranslate > -singleLoopWidth / 2) {
+                currentTranslate -= singleLoopWidth;
+                prevTranslate -= singleLoopWidth;
+            } else if (currentTranslate < -singleLoopWidth * 1.5) {
+                currentTranslate += singleLoopWidth;
+                prevTranslate += singleLoopWidth;
+            }
+        }
+
+        function dragEnd() {
+            isDragging = false;
+            cancelAnimationFrame(animationID);
+            slider.style.cursor = 'grab';
+            prevTranslate = currentTranslate;
+        }
+
+        function animation() {
+            track.style.transform = `translateX(${currentTranslate}px)`;
+            if (isDragging) requestAnimationFrame(animation);
+        }
+
+    </script>
+</body>
+
+</html>
